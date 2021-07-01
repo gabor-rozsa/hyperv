@@ -36,7 +36,7 @@ foreach ($cert in $Certs) {
     try {
         $certshortname = $cert.name.substring(0, 10)
         if ($CertSigning.subject -notlike "*$certshortname*") {
-            $dummy = Import-PfxCertificate -FilePath $cert -CertStoreLocation "Cert:\localmachine\Shielded VM Local Certificates" -Password $CertificatePassword 
+            $dummy = Import-PfxCertificate -exportable -FilePath $cert -CertStoreLocation "Cert:\localmachine\Shielded VM Local Certificates" -Password $CertificatePassword 
             Write-Host "$cert.name imported"
         }
         else {
