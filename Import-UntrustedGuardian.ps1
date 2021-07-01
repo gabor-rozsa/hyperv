@@ -40,7 +40,7 @@ foreach ($cert in $Certs) {
             Write-Host "$cert.name imported"
         }
         else {
-            Write-Host "$cert.name is already present is the store" -ForegroundColor Yellow
+            Write-Host "$cert.name is already present in the store" -ForegroundColor Yellow
         }
     }
     catch {
